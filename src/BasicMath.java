@@ -1,14 +1,40 @@
 public class BasicMath {
-    //REVERSE A NUMBER
-    static void sumDigits(int num){
-        String reverse="";
-        while(num!=0){
-            int digit=num%10;
-            reverse=reverse+digit;
-            num=num/10;
+    //PRIME NUMBER
+    static void primeCheck(int num){
+        for(int i=2;i<=num-1;i++){ //or i<num since num can be divided by 1 and itself
+            if(num%i==0){
+                System.out.println("the number is not prime ");
+
+            }
+            else{
+                System.out.println("The Number is Prime ");
+
+            }
         }
-        System.out.println(reverse+" ");
     }
+
+
+
+
+
+//    //REVERSE and PALINDROME CHECKER A NUMBER
+//    static void reverseDigits(int num){
+//        int originalNum=num;
+//
+//        int revNum=0;
+//        while(num!=0){
+//            int digit=num%10;
+//            revNum=revNum*10+digit; //REVERSE A NUMBER LOGIC
+//            num=num/10;
+//        }
+//        System.out.println(revNum);
+//        if(originalNum==revNum){  //NUM BECOMES ZERO FROM THE LOOP, SO WE CANNOT COMPARE NUM WITH revNum
+//            System.out.println("the Number is palindrome");
+//        }
+//        else{
+//            System.out.println("The Number is not Palindrome ");
+//        }
+//    }
 
 
 
@@ -52,8 +78,9 @@ public class BasicMath {
 //    }
 
     public static void main(String args[]){
-        int num=6345 ;
-        sumDigits(num);
+        int num=11;
+        primeCheck(num);
+//        reverseDigits(num);
     }
 
 }
