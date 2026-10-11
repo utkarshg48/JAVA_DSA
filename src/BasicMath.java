@@ -1,4 +1,41 @@
 public class BasicMath {
+    static boolean checkArmstrong(int num){
+        int originalNum=num; //FROM THE LOOP NUM BECOMES ZERP AT THE END, SO WE TAKE CREATE THIS VARIABLE TO COMAPRE IT WITH THE SUM
+        int sum=0;
+        while(num!=0){
+            int digit=num%10;  //This gives the last digit
+            sum=sum+digit*digit*digit;
+            num=num/10;  //REMOVES THE LAST DIGIT
+        }
+        if(originalNum==sum){
+            return true;
+        }
+        return false;
+    }
+
+
+    //GCD OF TWO NUMBERS
+    static int getGcd(int a,int b){
+        while(b!=0){
+            int oldValueOfB=b;
+            b=a%b;
+            a=oldValueOfB;
+        }
+        int ans=a;
+        return ans;
+    }
+
+    //GET LCM
+    static int getLcm(int a,int b){
+        int gcd=getGcd(a,b);
+        int product=a*b;
+        int lcm=product/gcd;
+        return lcm;
+    }
+
+
+
+
     //PRIME NUMBER
     static void primeCheck(int num){
         for(int i=2;i<=num-1;i++){ //or i<num since num can be divided by 1 and itself
@@ -78,8 +115,11 @@ public class BasicMath {
 //    }
 
     public static void main(String args[]){
-        int num=11;
-        primeCheck(num);
+        int num=142;
+        System.out.println(checkArmstrong(num));
+//        System.out.println(getGcd(18,12));
+//        System.out.println(getLcm(18,12));
+//        primeCheck(num);
 //        reverseDigits(num);
     }
 
