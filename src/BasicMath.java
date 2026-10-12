@@ -1,4 +1,38 @@
 public class BasicMath {
+    /
+
+
+//    static void printAllPrimeNumber(int num){
+//        System.out.println(1);
+//        for(int i=2;i<=num;i++){
+//            if(num%i!=0){
+//                System.out.println(i);
+//            }
+//        }
+//    }
+
+
+
+    static boolean checkPerfectNumber(int num){
+        int sum=1;
+        for(int i=2;i*i<=num;i++){
+            if(num%i==0){
+                int firstFactor=i;
+                int secondFactor=num/i;
+                sum=sum+firstFactor+secondFactor;
+            }
+        }
+        if(sum==num){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+
+
     static boolean checkArmstrong(int num){
         int originalNum=num; //FROM THE LOOP NUM BECOMES ZERP AT THE END, SO WE TAKE CREATE THIS VARIABLE TO COMAPRE IT WITH THE SUM
         int sum=0;
@@ -115,8 +149,10 @@ public class BasicMath {
 //    }
 
     public static void main(String args[]){
-        int num=142;
-        System.out.println(checkArmstrong(num));
+        int num=7;
+//        printAllPrimeNumber(num);
+//        System.out.println(checkPerfectNumber(num));
+//        System.out.println(checkArmstrong(num));
 //        System.out.println(getGcd(18,12));
 //        System.out.println(getLcm(18,12));
 //        primeCheck(num);
